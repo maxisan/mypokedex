@@ -3,7 +3,7 @@ import s from './home.module.css'
 import pokemonNotFound from '../resources/pokemonNotFound.png'
 import startNow from '../resources/startNow.png'
 
-export default function home({searchedPokemon, searched}) {
+export default function home({searchedPokemon}) {
 
   const {id, sprites, name, types, base_experience, height, weight, moves} = searchedPokemon;
 
@@ -20,11 +20,11 @@ export default function home({searchedPokemon, searched}) {
               <h3>Peso: {weight}</h3>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item active">Tipo: </li>
-                  {types.map(t => <li class="list-group-item">{t.type.name}</li>)}
+                  {types.map((t, i) => <li key={i} className="list-group-item">{t.type.name}</li>)}
                 </ul>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item active">Habilidades: </li>
-                {moves.map(m => <li class="list-group-item">{m.move.name}</li>)}
+                {moves.map((m, i) => <li key={i} className="list-group-item">{m.move.name}</li>)}
               </ul>
             </div>
           </div>

@@ -10,7 +10,7 @@ export default function SearchBar({pokeSearch}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    pokeSearch(search)
+    pokeSearch(search.toLowerCase())
     
   }
   
